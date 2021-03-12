@@ -23,8 +23,7 @@ export default function PhotoTagPicker({ photos, onChange, ...props }) {
           cursor="pointer"
           borderWidth={1}
           rounded="sm"
-          color={selectedTag === t ? 'current.text' : 'current.textLight'}
-          borderColor={selectedTag === t ? 'current.text' : 'current.border'}
+          color={selectedTag === t ? null : 'current.textLight'}
           onClick={() => {
             const newTag = selectedTag === t ? null : t;
             setSelectedTag(newTag);

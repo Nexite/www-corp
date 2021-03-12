@@ -5,6 +5,7 @@ import Box, { Grid } from '@codeday/topo/Atom/Box';
 import Content from '@codeday/topo/Molecule/Content';
 import { useQuery } from '../../query';
 import PreviousCoverageLogos from '../PreviousCoverageLogos';
+import { useColorModeValue } from '@codeday/topo/Theme';
 
 function rollup(events) {
   const stats = {};
@@ -37,7 +38,7 @@ export default function Stats(props) {
   const rollupStats = rollup(stats.items);
 
   return (
-    <Content full bg="red.50" color="red.900" pt={4} pb={2} {...props}>
+    <Content full bg={useColorModeValue("red.50", "gray.1200")} color={useColorModeValue("red.900", "red.50")} pt={4} pb={2} {...props}>
       <Content>
         <Grid templateColumns={{ base: 'repeat(3, 1fr)', md: 'repeat(4, 1fr)', lg: 'repeat(5, 1fr)' }} gap={4}>
           <StatBox num={rollupStats.statEventCount} label="Events" />

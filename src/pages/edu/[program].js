@@ -14,6 +14,8 @@ import Page from '../../components/Page';
 import Error404 from '../404';
 import { useQuery } from '../../query';
 import { ProgramQuery, ProgramNamesQuery } from './program.gql';
+import { useColorModeValue } from '@codeday/topo/Theme';
+import Collapse from '@codeday/topo/Molecule/Collapse';
 
 function Faq({ faq }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,21 +26,21 @@ function Faq({ faq }) {
         as="h4"
         fontSize="lg"
         onClick={() => setIsOpen(!isOpen)}
-        bg={isOpen ? 'gray.900' : 'gray.50'}
+        bg={isOpen ? useColorModeValue('gray.900', 'gray.1200') : useColorModeValue('gray.50', 'gray.1100')}
         color={isOpen && 'white'}
         cursor="pointer"
         p={4}
       >
         {faq.title}
       </Heading>
-      {isOpen && (
+      <Collapse in={isOpen}>
         <Box p={4}>
           <ContentfulRichText
             json={faq.answer.json}
             h1Size="xl"
           />
         </Box>
-      )}
+      </Collapse>
     </Box>
   )
 }
@@ -87,7 +89,7 @@ export default function EducationProgram({ seed }) {
           <Image
             src={program.logo.url}
             alt=""
-            size="1em"
+            width="1em"
             d="inline-block"
             position="relative"
             top="-0.075em"
@@ -96,8 +98,6 @@ export default function EducationProgram({ seed }) {
           {program.name}
           <Box
             d="inline-block"
-            bg="current.text"
-            color="current.bg"
             ml="0.8em"
             p="0.2em"
             pt="0.1em"

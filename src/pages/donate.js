@@ -19,7 +19,7 @@ export default function Donate() {
   if (checkEmail) {
     return (
       <Page title="Donate" slug="/donate">
-        <Content maxWidth="containers.md">
+        <Content maxWidth="container.md">
           <Heading as="h2" fontSize="5xl" mt={-2} mb={2}>Payment Link Emailed</Heading>
           <Text>
             Recently scammers have been using our donation form to test stolen credit cards. To prevent costly
@@ -32,7 +32,7 @@ export default function Donate() {
 
   return (
     <Page title="Donate" slug="/donate">
-      <Content maxWidth="containers.md">
+      <Content maxWidth="container.md">
         <Heading as="h2" fontSize="5xl" mt={-2} mb={2}>Make a Donation</Heading>
         <Text mb={8}>
           CodeDay is a 501(c)(3) non-profit. Your donation supports our work providing welcoming and diverse
@@ -84,7 +84,7 @@ export default function Donate() {
             }}
             mt={4}
             mb={4}
-            variantColor={name && email && amount && isEmail(email) ? 'green' : 'gray'}
+            colorScheme={name && email && amount && isEmail(email) ? 'green' : 'gray'}
             isLoading={isSubmitting}
             disabled={isSubmitting || !name || !email || !amount || !isEmail(email)}
           >

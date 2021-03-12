@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Box, { Grid } from '@codeday/topo/Atom/Box';
 import Text from '@codeday/topo/Atom/Text';
 import Image from '@codeday/topo/Atom/Image';
 import Content from '@codeday/topo/Molecule/Content';
 import { useQuery } from '../../query';
+import { useCurrentColor } from '@codeday/topo/Theme';
 
 export default function Employees(props) {
   const { account: { employees } } = useQuery();

@@ -5,6 +5,7 @@ import Image from '@codeday/topo/Atom/Image';
 import Content from '@codeday/topo/Molecule/Content';
 import shuffle from 'knuth-shuffle-seeded';
 import { useQuery } from '../../query';
+import { useTheme } from '@codeday/topo/utils';
 
 function VolunteerBox({ vol, showTitle }) {
   return (

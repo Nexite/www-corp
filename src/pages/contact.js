@@ -4,7 +4,7 @@ import { Grid } from '@codeday/topo/Atom/Box';
 import Text, { Heading, Link } from '@codeday/topo/Atom/Text';
 import Image from '@codeday/topo/Atom/Image';
 import Content from '@codeday/topo/Molecule/Content';
-import { apiFetch } from '@codeday/topo/utils';
+import { apiFetch, useTheme } from '@codeday/topo/utils';
 import Page from '../components/Page';
 import Employees from '../components/Contact/Employees';
 import Volunteers from '../components/Contact/Volunteers';
@@ -17,7 +17,6 @@ function nl2br(str) {
 
 export default function Home({ seed }) {
   const { cms: { email, phone, address } } = useQuery();
-
   return (
     <Page slug="/contact" title="Contact">
       <Content>

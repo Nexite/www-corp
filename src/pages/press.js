@@ -45,7 +45,7 @@ export default function Press({ seed }) {
             </Box>
 
             <Box textAlign="center">
-              <Button variantColor="blue" as="a" href="#assets">Download Press Images &amp; Logos</Button>
+              <Button colorScheme="blue" as="a" href="#assets">Download Press Images &amp; Logos</Button>
             </Box>
 
             <Box textAlign="center" mt={4}>
@@ -87,7 +87,7 @@ export default function Press({ seed }) {
         <Text>
           Logos are available for media use. All logos and names are trademarks of CodeDay.
         </Text>
-        <Button as="a" href="https://f1.codeday.org/logos.zip" variantColor="blue">Download Logos</Button>
+        <Button as="a" href="https://f1.codeday.org/logos.zip" colorScheme="blue">Download Logos</Button>
       </Content>
       <PhotoGallery seed={seed} />
     </Page>

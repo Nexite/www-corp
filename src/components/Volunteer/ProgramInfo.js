@@ -12,6 +12,7 @@ import { formatInterval } from '../../utils/time';
 import ContentfulRichText from '../ContentfulRichText';
 import Divider from '@codeday/topo/Atom/Divider';
 import Link from '@codeday/topo/Atom/Text/Link';
+import { useColorModeValue } from '@codeday/topo/Theme';
 
 const ROLE_COLORS = {
   mentor: 'blue',
@@ -25,7 +26,7 @@ export default function ProgramInfo({ program }) {
   const [blurbVisible, setBlurbVisible] = useState(false);
 
   return (
-    <Box border="current.borderColor" borderWidth={1} p={4} mb={8}>
+    <Box borderWidth={1} p={4} mb={8}>
       <Grid templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }} gap={8}>
 
         <Box>
@@ -66,8 +67,8 @@ export default function ProgramInfo({ program }) {
               borderWidth={1}
               borderColor={`${ROLE_COLORS[pos]}.700`}
               rounded="md"
-              bg={`${ROLE_COLORS[pos]}.50`}
-              color={`${ROLE_COLORS[pos]}.700`}
+              bg={`${ROLE_COLORS[pos]}.${useColorModeValue('50', '700')}`}
+              color={`${ROLE_COLORS[pos]}.${useColorModeValue('700', '100')}`}
             >
                 {pos.replace(/\w\S*/g, (t) => t.charAt(0).toUpperCase() + t.slice(1))}s
             </Box>
@@ -91,7 +92,7 @@ export default function ProgramInfo({ program }) {
         <>
           <Link as="div" onClick={() => setBlurbVisible(!blurbVisible)} position="relative" mt={4}>
             <Box textAlign="center">
-              <Box bg="current.bg" d="inline-block" p={4} color="blue.800">
+              <Box bg={blurbVisible ? useColorModeValue("current.bg", "gray.1100") : null} d="inline-block" p={4} color="blue.800">
                 <Link as="div" d="inline-block" mr={2}>
                   {blurbVisible ? 'Hide' : 'Share With Co-Workers'}
                 </Link>
@@ -120,7 +121,7 @@ export default function ProgramInfo({ program }) {
                 as="a"
                 target="_blank"
                 href={`https://www.linkedin.com/shareArticle/?url=${encodeURIComponent(program.volunteerUrl)}`}
-                variantColor="blue"
+                colorScheme="blue"
                 mb={8}
               >
                 Share on LinkedIn

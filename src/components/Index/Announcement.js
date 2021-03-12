@@ -4,6 +4,7 @@ import Box, { Grid } from '@codeday/topo/Atom/Box';
 import Text from '@codeday/topo/Atom/Text';
 import Button from '@codeday/topo/Atom/Button';
 import { useQuery } from '../../query';
+import { useColorModeValue } from '@codeday/topo/Theme';
 
 const fromIso = (s) => {
   var b = s.split(/\D+/);
@@ -31,7 +32,7 @@ export default function Announcement(props) {
       <Box
           borderWidth={1}
           borderColor={`${baseColor}.500`}
-          color={`${baseColor}.900`}
+          color={`${baseColor}.${useColorModeValue('900', '500')}`}
           borderRadius={4}
           p={4}
           m={0}
@@ -52,7 +53,7 @@ export default function Announcement(props) {
             </Text>
           </Box>
           <Box textAlign="right" display={{ base: 'none', md: 'block' }}>
-            <Button size="sm" variantColor={baseColor} mb={0}>Learn More</Button>
+            <Button size="sm" colorScheme={baseColor} mb={0}>Learn More</Button>
           </Box>
         </Grid>
       </Box>

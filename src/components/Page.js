@@ -8,13 +8,15 @@ import { CodeDay } from '@codeday/topo/Atom/Logo';
 import { useQuery } from '../query';
 import Button from '@codeday/topo/Atom/Button';
 import Link from '@codeday/topo/Atom/Text/Link';
+import { useColorMode, codedayTheme } from '@codeday/topo/Theme';
+import { Night, Day } from '@codeday/topocons/Icon'
+import { Tooltip } from '@codeday/topo/Atom/Text';
 
 const DOMAIN = 'https://www.codeday.org';
-
-export default function Page ({ children, title, darkHeader, slug }) {
+export default function Page({ children, title, slug }) {
   const { cms } = useQuery();
   const { mission } = cms || {};
-
+  const { colorMode, toggleColorMode } = useColorMode()
   return (
     <Box overflow="hidden">
       <Head>
@@ -37,7 +39,7 @@ export default function Page ({ children, title, darkHeader, slug }) {
         }}
       />
       <Box position="relative">
-        <Header darkBackground={darkHeader} gradAmount={darkHeader && 'lg'} underscore>
+        <Header underscore>
           <SiteLogo>
             <a href="/">
               <CodeDay withText />
@@ -52,6 +54,7 @@ export default function Page ({ children, title, darkHeader, slug }) {
             <Button as="a" variant="ghost" href="/volunteer">Volunteer</Button>
             <Button as="a" variant="ghost" href="/press">Press</Button>
             <Button as="a" variant="ghost" href="https://blog.codeday.org/" target="_blank">Blog</Button>
+            <ToggleColorModeButton as="a" variant="ghost" />
           </Menu>
         </Header>
         <Main>
@@ -63,9 +66,19 @@ export default function Page ({ children, title, darkHeader, slug }) {
             <Link href="/help" d="block">FAQs &amp; Help</Link>
             <Link href="/docs" d="block">Legal Documents</Link>
             <Link href="/donate" d="block">Make a Donation</Link>
+            <Link onClick={toggleColorMode} d="block">Toggle {colorMode === "light" ? "dark" : "light"} mode</Link>
           </CustomLinks>
         </Footer>
       </Box>
     </Box>
+  )
+}
+
+const ToggleColorModeButton = (props) => {
+  const { colorMode, toggleColorMode } = useColorMode()
+  return (
+    <Tooltip label={`Toggle ${colorMode === "dark" ? "light" : "dark"} mode`} hasArrow>
+      <Button onClick={toggleColorMode} {...props}>{colorMode === "dark" ? <Day /> : <Night />}</Button>
+    </Tooltip>
   )
 }

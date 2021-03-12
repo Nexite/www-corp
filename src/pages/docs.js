@@ -27,7 +27,7 @@ export default function Conduct() {
 
   return (
     <Page title="Documents" slug="/docs">
-      <Content maxWidth="containers.md">
+      <Content maxWidth="container.md">
         <Heading as="h2" fontSize="5xl" mt={-2} mb={8}>Legal Documents</Heading>
         {displayTypes.map((t, i) => (
           <>

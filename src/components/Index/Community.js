@@ -171,7 +171,6 @@ function Card({
     <Box
       role="figure"
       height={40}
-      borderColor="current.border"
       borderWidth={1}
       overflow="hidden"
       mr={8}

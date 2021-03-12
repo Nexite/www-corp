@@ -11,7 +11,6 @@ export default function TextQuote({ testimonial, ...props }) {
         fontSize={testimonial.quote.length > 350 ? 'xl' : '2xl'}
         fontStyle="italic"
         borderLeftWidth={2}
-        borderColor="current.border"
         pl={4}
       >
         {testimonial.quote}

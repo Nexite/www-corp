@@ -28,21 +28,20 @@ export default function Programs() {
   const nextEventDate = nextUpcomingEvent(programs)
 
   return (
-    <StaticContent>
+    // <StaticContent>
       <Content>
-
         <Heading as="h2" fontSize="5xl" textAlign="center" mb={16} mt={16} bold>Attend an Event</Heading>
 
         {/* CodeDay */}
         <Grid templateColumns={{ base: '1fr', md: '1fr 1fr' }} gap={8}>
-          <Box borderWidth={1} borderColor="current.border" borderRadius={2} p={4} boxShadow="md">
+          <Box borderWidth={1} borderRadius={2} p={4} boxShadow="md">
             <CodeDay fontSize="4xl" withText />
             {JSON.stringify(nextUpcomingEvent(codeDay?.linkedFrom?.events?.items)) == JSON.stringify(nextEventDate) && Math.floor((nextUpcomingEvent(codeDay?.linkedFrom?.events?.items).startsAt - new Date())/(24*60*60*1000)) <= 30 &&
               <Image src="/soon.svg" height={10} alt="" float="right" />}
             <NextEventDate upcoming={codeDay?.linkedFrom?.events?.items} />
             <Text fontSize="md" mt={4} mb={4}>{codeDay?.shortDescription}</Text>
             <Text fontSize="md" mb={4} bold>Choose a location:</Text>
-            <Box borderWidth={1} borderColor="current.border" maxHeight={{ base: "sm", md: "lg" }} overflowY="auto">
+            <Box borderWidth={1} maxHeight={{ base: "sm", md: "lg" }} overflowY="auto">
               {regions?.items?.map((region) => (
                 <Box
                   p={2}
@@ -51,7 +50,6 @@ export default function Programs() {
                   href={`https://event.codeday.org/${region.webname}`}
                   target="_blank"
                   fontSize="xl"
-                  borderColor="current.border"
                   borderBottomWidth="1px"
                   key={region.webname}
                 >
@@ -66,7 +64,6 @@ export default function Programs() {
             {mainPrograms?.items?.map((program) => (
               <Box
                 borderBottomWidth={1}
-                borderColor="current.border"
                 p={4}
                 mb={4}
                 d="block"
@@ -97,7 +94,6 @@ export default function Programs() {
               {otherPrograms?.items?.map((prog, i) => (
                   <Box
                     borderRightWidth={Math.min(1, (i+1) % 3)}
-                    borderColor="current.border"
                     p={4}
                     mb={4}
                     d="block"
@@ -116,6 +112,6 @@ export default function Programs() {
           </Box>
         </Grid>
       </Content>
-    </StaticContent>
+    // </StaticContent>
   )
 }

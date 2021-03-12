@@ -10,6 +10,7 @@ import Page from '../../../components/Page';
 import ContentfulRichText from '../../../components/ContentfulRichText';
 import { useQuery } from '../../../query';
 import { HelpProgramAudienceQuery, HelpProgramAudiencePathsQuery } from './audience.gql';
+import { useColorModeValue } from '@codeday/topo/Theme';
 
 export default function Audience({ programWebname, audience }) {
   const [tag, setTag ] = useState(null);
@@ -57,7 +58,7 @@ export default function Audience({ programWebname, audience }) {
                 pl={2}
                 pr={2}
                 cursor="pointer"
-                color={t === tag ? 'current.text' : 'current.textLight'}
+                color={t === tag ? null : 'current.textLight'}
               >
                 {t}
                 {t === tag && <>{' '}<UiX /></>}
@@ -65,7 +66,6 @@ export default function Audience({ programWebname, audience }) {
             ))}
           </Box>
         )}
-
         <Grid templateColumns={{ base: '1fr', lg: '1fr 1fr' }} gap={8}>
           {filteredFaqs?.map((faq) => (
             <Box
@@ -88,7 +88,7 @@ export default function Audience({ programWebname, audience }) {
               <Box
                 position="absolute"
                 height={24}
-                background="linear-gradient(0deg, rgba(255,255,255,1) 25%, rgba(255,255,255,0) 100%)"
+                background={useColorModeValue("linear-gradient(0deg, rgba(255,255,255,1) 25%, rgba(255,255,255,0) 100%)", "linear-gradient(0deg, rgba(41,41,41,1) 25%, rgba(41,41,41,0) 100%)")}
                 bottom={0}
                 left={0}
                 right={0}
