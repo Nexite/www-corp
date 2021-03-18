@@ -8,9 +8,7 @@ import { CodeDay } from '@codeday/topo/Atom/Logo';
 import { useQuery } from '../query';
 import Button from '@codeday/topo/Atom/Button';
 import Link from '@codeday/topo/Atom/Text/Link';
-import { useColorMode, codedayTheme } from '@codeday/topo/Theme';
-import { Night, Day } from '@codeday/topocons/Icon'
-import { Tooltip } from '@codeday/topo/Atom/Text';
+import { useColorMode } from '@codeday/topo/Theme';
 
 const DOMAIN = 'https://www.codeday.org';
 export default function Page({ children, title, slug }) {
@@ -54,7 +52,6 @@ export default function Page({ children, title, slug }) {
             <Button as="a" variant="ghost" href="/volunteer">Volunteer</Button>
             <Button as="a" variant="ghost" href="/press">Press</Button>
             <Button as="a" variant="ghost" href="https://blog.codeday.org/" target="_blank">Blog</Button>
-            <ToggleColorModeButton as="a" variant="ghost" />
           </Menu>
         </Header>
         <Main>
@@ -71,14 +68,5 @@ export default function Page({ children, title, slug }) {
         </Footer>
       </Box>
     </Box>
-  )
-}
-
-const ToggleColorModeButton = (props) => {
-  const { colorMode, toggleColorMode } = useColorMode()
-  return (
-    <Tooltip label={`Toggle ${colorMode === "dark" ? "light" : "dark"} mode`} hasArrow>
-      <Button onClick={toggleColorMode} {...props}>{colorMode === "dark" ? <Day /> : <Night />}</Button>
-    </Tooltip>
   )
 }
