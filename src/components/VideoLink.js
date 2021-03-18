@@ -11,7 +11,7 @@ export default function VideoLink({ children, ...props }) {
       <Modal open={modalOpen} onClose={() => setModalOpen(false)}>
         <VideoPlayer {...props} />
       </Modal>
-      <Box cursor="pointer" onClick={() => setModalOpen(true)}>
+      <Box cursor="pointer" width="fit-content" onClick={() => setModalOpen(true)}>
         {children}
       </Box>
     </>
