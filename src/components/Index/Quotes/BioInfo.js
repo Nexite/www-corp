@@ -50,7 +50,7 @@ export default function BioInfo({
           {groupName && ((firstName || lastName) ? ` (${groupName})` : groupName)}
         </Text>
         <Text mb={0}>
-          {programName} {region?.name} {type}
+          {programName.replace("CodeDay", "Cod Day").replace("CodeCay", "CodCup")} {region?.name} {type}
         </Text>
         {title && company && (
           <Text mb={0}>{title} at {company}</Text>

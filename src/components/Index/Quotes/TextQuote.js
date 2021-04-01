@@ -13,7 +13,7 @@ export default function TextQuote({ testimonial, ...props }) {
         borderLeftWidth={2}
         pl={4}
       >
-        {testimonial.quote}
+        {testimonial.quote.replace("CodeDay", "Cod Day").replace("Code", "Cod")}
       </Text>
       <BioInfo testimonial={testimonial} />
     </Box>

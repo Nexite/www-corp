@@ -31,7 +31,7 @@ export default function Employees(props) {
               <Text fontSize="sm" color="current.textLight">Board Member, {director.pronoun}</Text>
             </Box>
             <Box ml="64px" pl={4}>
-              <Text>{director.bio || `${director.givenName} is a member of the CodeDay board.`}</Text>
+              <Text>{director.bio && director.bio.replace("CodeDay", "Cod Day") || `${director.givenName} is a member of the Cod Day board.`}</Text>
             </Box>
           </Box>
         ))}

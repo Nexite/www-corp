@@ -22,7 +22,7 @@ export default function EduIndex() {
           mb={4}
           alt=""
         />
-        <Heading as="h2" fontSize="5xl">CodeDay Edu</Heading>
+        <Heading as="h2" fontSize="5xl">Cod Day Edu</Heading>
         <Text fontSize="xl">
           Many of our programs have special offers and options for teachers, professors, club leaders,
           and educational organizations. Learn more by clicking on a program below.
@@ -31,7 +31,7 @@ export default function EduIndex() {
           {eduPrograms?.items?.filter((program) => program.educationDetails).map((program) => (
             <IconBox as="a" d="block" href={`/edu/${program.webname}`} h="100%" key={program.webname}>
               <HeaderIcon><Image src={program.logo.url} h={16} alt="" /></HeaderIcon>
-              <HeaderText>{program.name}</HeaderText>
+              <HeaderText>{program.name.replace("CodeDay", "Cod Day")}</HeaderText>
               <BoxBody>{program.shortDescription}</BoxBody>
             </IconBox>
           ))}
@@ -40,7 +40,7 @@ export default function EduIndex() {
         <Heading as="h3" fontSize="3xl" mt={12} mb={4}>Partner Organizations and Programs</Heading>
         <Text fontSize="md" mb={8}>
           We partner with the following organizations who we think might be great fit for CS educators.
-          {' '}<Text as="strong" bold>(Not CodeDay-run programs.)</Text>
+          {' '}<Text as="strong" bold>(Not Cod Day-run programs.)</Text>
         </Text>
         <Grid templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }} gap={4}>
           {communityPartners?.items?.map((partner) => (

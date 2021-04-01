@@ -35,7 +35,7 @@ export default function Donate() {
       <Content maxWidth="container.md">
         <Heading as="h2" fontSize="5xl" mt={-2} mb={2}>Make a Donation</Heading>
         <Text mb={8}>
-          CodeDay is a 501(c)(3) non-profit. Your donation supports our work providing welcoming and diverse
+          Cod Day is a 501(c)(3) non-profit. Your donation supports our work providing welcoming and diverse
           opportunities for under-served students to explore a future in tech and beyond.
         </Text>
         {error && (
@@ -98,7 +98,7 @@ export default function Donate() {
             and mail to:<br />340 S Lemon Ave, #7763, Walnut CA 91789.
           </Text>
           <Text>
-            <Text as="span" bold>Employer Matching:</Text> search for &ldquo;CodeDay&rdquo; or &ldquo;Student Research
+            <Text as="span" bold>Employer Matching:</Text> search for &ldquo;Cod Day&rdquo; or &ldquo;Student Research
             and Development&rdquo; in your employer&apos;s matching portal. Our EIN is 26-4742589.{' '}
             <Link href="https://f1.codeday.org/exempt.pdf">Download our exemption letter.</Link>
           </Text>

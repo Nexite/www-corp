@@ -4,10 +4,11 @@ import Box from '@codeday/topo/Atom/Box';
 import Header, { SiteLogo, Menu } from '@codeday/topo/Organism/Header';
 import Main from '@codeday/topo/Organism/Main';
 import Footer, { CustomLinks } from '@codeday/topo/Organism/Footer';
-import { CodeDay } from '@codeday/topo/Atom/Logo';
+import { CodDay } from '@codeday/topo/Atom/Logo';
 import { useQuery } from '../query';
 import Button from '@codeday/topo/Atom/Button';
 import Link from '@codeday/topo/Atom/Text/Link';
+import Text from '@codeday/topo/Atom/Text';
 import { useColorMode } from '@codeday/topo/Theme';
 
 const DOMAIN = 'https://www.codeday.org';
@@ -21,13 +22,13 @@ export default function Page({ children, title, slug }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <DefaultSeo
-        title={title ? `${title} ~ CodeDay` : 'CodeDay'}
+        title={title ? `${title} ~ Cod Day` : 'Cod Day'}
         description={mission?.items[0]?.value}
         canonical={`${DOMAIN}${slug}`}
         openGraph={{
           type: 'website',
           locale: 'en_US',
-          site_name: 'CodeDay',
+          site_name: 'Cod Day',
           url: `${DOMAIN}${slug}`,
         }}
         twitter={{
@@ -40,9 +41,9 @@ export default function Page({ children, title, slug }) {
         <Header underscore>
           <SiteLogo>
             <a href="/">
-              <CodeDay withText />
+              <CodDay withText />
               <Box as="h1" visuallyHidden>
-                CodeDay
+                Cod Day
               </Box>
             </a>
           </SiteLogo>

@@ -54,7 +54,7 @@ export default function EducationProgram({ seed }) {
   const faqs = cms?.faqs?.items;
   const pageProps = {
     slug: `/edu/${query.program}`,
-    title: program ? `${program.name} for Education` : 'CodeDay for Education',
+    title: program ? `${program.name.replace("CodeDay", "Cod Day")} for Education` : 'Cod Day for Education',
   };
 
   if (isFallback) return (
@@ -95,7 +95,7 @@ export default function EducationProgram({ seed }) {
             top="-0.075em"
             mr="0.2em"
           />
-          {program.name}
+          {program.name.replace("CodeDay", "Cod Day")}
           <Box
             d="inline-block"
             ml="0.8em"
@@ -114,11 +114,11 @@ export default function EducationProgram({ seed }) {
         <Grid templateColumns={{ base: '1fr', md: '1fr 1fr', lg: '6fr 3fr' }} gap={8}>
 
           <Box>
-            <Text fontSize="xl" bold>{program.description}</Text>
+            <Text fontSize="xl" bold>{program.description.replace("CodeDay", "Cod Day")}</Text>
             {testimonial && (
               <Box borderLeftWidth={2} pl={4} ml={2} mb={8}>
                 <Text fontSize="lg" fontStyle="italic">
-                  {testimonial.quote}
+                  {testimonial.quote.replace("CodeDay", "Cod Day")}
                 </Text>
                 <Text>
                   &mdash;{testimonial.firstName} {testimonial.lastName},

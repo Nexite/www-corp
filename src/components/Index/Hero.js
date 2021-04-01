@@ -18,7 +18,7 @@ export default function Hero({ twitch, ...props }) {
       <Heading as="h2" fontSize="6xl" fontWeight="bold" lineHeight="1.1" color={textColor} mt={8}>
         There's a place in tech for everyone.
       </Heading>
-      <Text fontSize="xl" mt={8} mb={8} color={textColor}>{mission?.items[0]?.value}</Text>
+      <Text fontSize="xl" mt={8} mb={8} color={textColor}>{mission?.items[0]?.value.replace("CodeDay", "Cod Day")}</Text>
       {explainer && (
         <VideoLink url={explainer.url} autoPlay>
           <Button colorScheme="red">Learn More&nbsp;<Play style={{ position: 'relative', top: '-0.15em' }} /></Button>

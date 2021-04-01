@@ -237,7 +237,7 @@ export default function Community({ seed, ...props }) {
 
         <Content>
           <Heading as="h2" fontSize="5xl" textAlign="center" mb={8} mt={8} bold>
-            More than 50,000 students have created amazing projects at CodeDay events.
+            More than 50,000 students have created amazing projects at Cod Day events.
           </Heading>
         </Content>
 

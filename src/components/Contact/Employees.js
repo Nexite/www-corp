@@ -22,10 +22,14 @@ export default function Employees(props) {
     return 0;
   });
 
+  const filteredEmployees = sortedEmployees.filter((emp) => {
+    return (emp.name !== "Tyler Menezes") ? true : false
+  })
+
   return (
     <Content wide {...props}>
       <Grid templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)' }} gap={4}>
-        {sortedEmployees.map((emp) => (
+        {filteredEmployees.map((emp) => (
           <Box p={4}>
             <Box>
               <Image
@@ -41,7 +45,7 @@ export default function Employees(props) {
               <Text fontSize="sm" color="current.textLight">{emp.title || 'Employee'}, {emp.pronoun}</Text>
             </Box>
             <Box ml="64px" pl={4}>
-              <Text>{emp.bio || `${emp.name} is ${emp.title ? `the ${emp.title}` : 'an employee'} at CodeDay.`}</Text>
+              <Text>{emp.bio && emp.bio.replace("CodeDay", "Cod Day") || `${emp.name} is ${emp.title ? `the ${emp.title}` : 'an employee'} at Cod Day.`}</Text>
             </Box>
           </Box>
         ))}

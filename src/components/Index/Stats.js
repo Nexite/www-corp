@@ -42,7 +42,7 @@ export default function Stats(props) {
       <Content>
         <Grid templateColumns={{ base: 'repeat(3, 1fr)', md: 'repeat(4, 1fr)', lg: 'repeat(5, 1fr)' }} gap={4}>
           <StatBox num={rollupStats.statEventCount} label="Events" />
-          <StatBox num={rollupStats.statStudentCount} label="CodeDay Alums" />
+          <StatBox num={rollupStats.statStudentCount} label="Cod Day Alums" />
           <StatBox
             num={rollupStats.statStudentCount * 0.71}
             label="Underrepresented in CS"

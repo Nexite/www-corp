@@ -85,7 +85,7 @@ export default function Press({ seed }) {
           a CC-BY-SA license. All pictured individuals have signed media waivers.
         </Text>
         <Text>
-          Logos are available for media use. All logos and names are trademarks of CodeDay.
+          Logos are available for media use. All logos and names are trademarks of Cod Day.
         </Text>
         <Button as="a" href="https://f1.codeday.org/logos.zip" colorScheme="blue">Download Logos</Button>
       </Content>

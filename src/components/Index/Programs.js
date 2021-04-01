@@ -4,7 +4,7 @@ import Button from '@codeday/topo/Atom/Button';
 import Image from '@codeday/topo/Atom/Image';
 import Text, { Heading } from '@codeday/topo/Atom/Text';
 import Content from '@codeday/topo/Molecule/Content';
-import { CodeDay } from '@codeday/topo/Atom/Logo';
+import { CodDay } from '@codeday/topo/Atom/Logo';
 import { nextUpcomingEvent, formatInterval } from '../../utils/time';
 import { useQuery } from '../../query';
 
@@ -33,11 +33,11 @@ export default function Programs() {
       {/* CodeDay */}
       <Grid templateColumns={{ base: '1fr', md: '1fr 1fr' }} gap={8}>
         <Box borderWidth={1} borderRadius={2} p={4} boxShadow="md">
-          <CodeDay fontSize="4xl" withText />
+          <CodDay fontSize="4xl" withText />
           {JSON.stringify(nextUpcomingEvent(codeDay?.linkedFrom?.events?.items)) == JSON.stringify(nextEventDate) && Math.floor((nextUpcomingEvent(codeDay?.linkedFrom?.events?.items).startsAt - new Date()) / (24 * 60 * 60 * 1000)) <= 30 &&
             <Image src="/soon.svg" height={10} alt="" float="right" />}
           <NextEventDate upcoming={codeDay?.linkedFrom?.events?.items} />
-          <Text fontSize="md" mt={4} mb={4}>{codeDay?.shortDescription}</Text>
+          <Text fontSize="md" mt={4} mb={4}>{codeDay?.shortDescription.replace("CodeDay", "Cod Day")}</Text>
           <Text fontSize="md" mb={4} bold>Choose a location:</Text>
           <Box borderWidth={1} maxHeight={{ base: "sm", md: "lg" }} overflowY="auto">
             {regions?.items?.map((region) => (
@@ -77,7 +77,7 @@ export default function Programs() {
                 </Box>
                 {JSON.stringify(nextUpcomingEvent(program.linkedFrom?.events?.items)) == JSON.stringify(nextEventDate) && Math.floor((nextUpcomingEvent(program.linkedFrom?.events?.items).startsAt - new Date()) / (24 * 60 * 60 * 1000)) <= 30 &&
                   <Image src="/soon.svg" height={10} alt="" float="right" />}
-                <Text fontSize="lg" mb={0} bold>{program.name}</Text>
+                <Text fontSize="lg" mb={0} bold>{program.name.replace("CodeDay", "Cod Day")}</Text>
               </Box>
               <NextEventDate upcoming={program.linkedFrom?.events?.items} />
               <Text mt={2} clear="both">{program.shortDescription}</Text>
@@ -103,7 +103,7 @@ export default function Programs() {
               >
                 <Image d="inline-block" src={prog.logo.url} height={12} mb={2} />
                 <br />
-                <Text fontSize="lg" mb={0} bold>{prog.name}</Text>
+                <Text fontSize="lg" mb={0} bold>{prog.name.replace("CodeCup", "CodCup").replace("Big Data", "Big Catch")}</Text>
               </Box>
             ))}
           </Grid>
