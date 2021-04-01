@@ -15,6 +15,8 @@ import EcoBox from '../components/Index/EcoBox';
 import useTwitch from '../useTwitch';
 import { IndexQuery } from './index.gql';
 
+// test
+
 export default function Home({ seed }) {
   const twitch = useTwitch();
   return (
